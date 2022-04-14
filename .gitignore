@@ -1,0 +1,6 @@
+blender/[0-9]*
+ml/data/*
+ml/predicted/*
+ml/test/*
+ml/.venv
+ml/.vscode
