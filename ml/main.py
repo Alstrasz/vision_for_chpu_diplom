@@ -12,32 +12,39 @@ LOAD = True
 FIT = True
 
 def load_data(path='./data/'):
-    dataset = tf.keras.utils.image_dataset_from_directory('./data/', labels=None, shuffle=False, color_mode='rgb',
+    print('loading from', path, path + "/*.txt")
+    dataset = tf.keras.utils.image_dataset_from_directory(path, labels=None, shuffle=False, color_mode='rgb',
                                                           batch_size=None, image_size=(IMG_H, IMG_W))
-    lables = tf.data.Dataset.list_files("./data/*/*.txt", shuffle=False)
+    lables = tf.data.Dataset.list_files(path + "/*.txt", shuffle=False)
     lables = lables.map(lambda file_path: tf.strings.to_number(
         tf.strings.split(tf.strings.split(tf.io.read_file(file_path), '\n')[0], ',')))
+    print('lens', len(lables), len(dataset))
     return np.array(list(dataset)), np.array(list(lables))
 
 
 def filter_out_zeroes(l):
+    print('filtering')
     # lx, ly = l
+    # print(l)
     filter_cond = np.logical_and.reduce(l[1] > 0, 1)
     return l[0][filter_cond], l[1][filter_cond]
 
 
 def normolize(l):
+    print('norm')
     # lx, ly = l
     coef = np.array([IMG_H, IMG_W]) / 2
     return l[0] / 255, (l[1] - coef) / coef
 
 
 def denorm(y):
+    print('denorm')
     coef = np.array([IMG_H, IMG_W]) / 2
     return np.ceil(y * coef + coef)
 
 
 def shuffle(l, seed=0):
+    print('shuffling')
     # lx, ly = l
     old_seed = random.randint(0, np.power(2, 32))
     random.seed(seed)
@@ -48,7 +55,8 @@ def shuffle(l, seed=0):
     return l[0][li], l[1][li]
 
 
-def split_train_validate(l, split=0.1, seed=0):
+def split_train_validate(l, split=0.05, seed=0):
+    print('splitting')
     # lx, ly = l
     old_seed = random.randint(0, np.power(2, 32))
     random.seed(seed)
@@ -59,11 +67,13 @@ def split_train_validate(l, split=0.1, seed=0):
     return l[0][tr], l[1][tr], l[0][np.logical_not(tr)], l[1][np.logical_not(tr)]
 
 
-def load_and_prepare_data():
-    return split_train_validate(shuffle(normolize(filter_out_zeroes(load_data()))))
+def load_and_prepare_data(data_path):
+    print('lapd')
+    return split_train_validate(shuffle(normolize(filter_out_zeroes(load_data(data_path)))))
 
 
 def create_model():
+    print('creating model')
     model = tf.keras.models.Sequential([
         tf.keras.layers.Flatten(input_shape=(IMG_H, IMG_W)),
         tf.keras.layers.Dense(3),
@@ -80,12 +90,14 @@ def create_model():
 
 
 def load_model(save_path="training_1/cp.ckpt"):
+    print('loading model')
     model = create_model()
     model.load_weights(save_path)
     return model
 
 
 def fit_model(model, lx, ly, save_path="training_1/cp.ckpt"):
+    print('fitting model')
     checkpoint_path = save_path
     checkpoint_dir = os.path.dirname(checkpoint_path)
     cp_callback = tf.keras.callbacks.ModelCheckpoint(filepath=checkpoint_path,
@@ -95,11 +107,12 @@ def fit_model(model, lx, ly, save_path="training_1/cp.ckpt"):
 
 
 def to_greyscale(x):
+    print('to greyscale')
     coef = np.array([0.299, 0.587, 0.114])
     return np.sum(x * coef, axis=3)
 
 
-def predicted_stats(sx, vy, predicted):
+def predicted_stats(sx, vy, predicted, save_prefix=''):
     print('Evaluated\n', predicted)
     print('Expected\n', vy)
     print('Diff\n', predicted - vy)
@@ -134,7 +147,7 @@ def predicted_stats(sx, vy, predicted):
                     continue
                 el[y, x] = np.array([0, 255, 0])
 
-        Image.fromarray(el).save('./predicted/' + str(i) + '.png')
+        Image.fromarray(el).save('./predicted/' + save_prefix + str(i) + '.png')
         # plt.imshow(el, interpolation='nearest')
         # plt.savefig('./predicted/' + str(i) + '.png')
 
@@ -155,29 +168,37 @@ def check_vis(sx, vy):
                     continue
                 el[y, x] = np.array([255, 0, 0])
         
-        Image.fromarray(el).save('./test/' + str(i) + '.png')
+        Image.fromarray(el).save('./test/' + save_prefix + str(i) + '.png')
         # plt.imshow(el, interpolation='nearest')
         # plt.savefig('./test/' + str(i) + '.png')
 
-lx, ly, sx, vy = load_and_prepare_data()
-# check_vis(lx, ly)
-lx = to_greyscale(lx)
-vx = to_greyscale(sx)
-print(lx[:, 0, 0])
-print(ly)
-print('-------------')
-print(vx[:, 0, 0])
-print(vy)
+def main(data_path='./data', save_prefix=''):
+    lx, ly, sx, vy = load_and_prepare_data(data_path)
+    # check_vis(lx, ly)
+    lx = to_greyscale(lx)
+    vx = to_greyscale(sx)
+    print(lx[:, 0, 0])
+    print(ly)
+    print('-------------')
+    print(vx[:, 0, 0])
+    print(vy)
 
-if LOAD:
-    model = load_model()
-else:
-    model = create_model()
-if FIT:
-    fit_model(model, lx, ly)
+    if LOAD:
+        model = load_model()
+    else:
+        model = create_model()
+    if FIT:
+        fit_model(model, lx, ly)
 
 
-model.evaluate(lx, ly, verbose=2)
-model.evaluate(vx, vy, verbose=2)
-print(sx, vy)
-predicted_stats(sx, vy, model(vx).numpy())
+    model.evaluate(lx, ly, verbose=2)
+    model.evaluate(vx, vy, verbose=2)
+    print(sx, vy)
+    predicted_stats(sx, vy, model(vx).numpy(), save_prefix=save_prefix)
+
+
+if __name__ == '__main__':
+    LOAD = True
+    for folder in os.listdir('./data'):
+        main(data_path='./data/' + folder, save_prefix=folder + '_')
+        LOAD = True

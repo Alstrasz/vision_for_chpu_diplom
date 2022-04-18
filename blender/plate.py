@@ -369,7 +369,7 @@ def create_sphere():
     return bpy.context.object
 
 def create_data_file(file_location, file_name):
-    bpy.ops.image.open(filepath=file_location + '\\' + file_name)
+    bpy.ops.image.open(filepath=file_location + '/' + file_name)
     img = bpy.data.images[file_name]
     acc_delta = 0.2
     ret = [[], [], []]
@@ -427,7 +427,7 @@ def init_mov_scene(camera, camera_path, sphere_1, sphere_2, sphere_3, sphere_pat
     sphere_1.location[0] += mov_1
     update()
     
-    for i in range(0):
+    for i in range(1000):
         start = time.time()
         sphere_1.hide_render = False
         sphere_2.hide_render = False
@@ -451,10 +451,12 @@ def init_mov_scene(camera, camera_path, sphere_1, sphere_2, sphere_3, sphere_pat
         f = open(path + "/pos_" + str(i) + ".txt", "w")
         f.write(str(pos[0][0]) + ',' + str(pos[0][1]) + '\n' + str(pos[1][0]) + ',' + str(pos[1][1]) + '\n' + str(pos[2][0]) + ',' + str(pos[2][1]))
         f.close()
+        os.remove(path + "/dots_" + str(i) + ".png")
         print("sv", time.time()-start)
         start = time.time()
         mov_1, mov_2 = move_iteration(camera, sphere_1, sphere_2, sphere_3, mov_1, mov_2, delta)
         print("mv", time.time()-start)
+        print('--------')
         start = time.time()
         
 
@@ -487,7 +489,7 @@ def gen_scene(num_points, seed=0, exec_path="Y:/blender_prj"):
     
     bpy.context.scene.render.resolution_x = 320
     bpy.context.scene.render.resolution_y = 240
-
+    bpy.context.scene.eevee.taa_render_samples = 32
     
     
     points = generate_polygon(center=(0, 0),
@@ -558,5 +560,6 @@ def gen_scene(num_points, seed=0, exec_path="Y:/blender_prj"):
 
 #delete_all()
 #gen_scene(128, 0)
-delete_all()
-gen_scene(128, 1)
+for i in range(10, 20):
+    delete_all()
+    gen_scene(128, i, '/home/al-w/projects/diplom/blender')
