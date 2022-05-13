@@ -1,15 +1,17 @@
 import tensorflow as tf
-from tensorflow.keras.preprocessing.image import ImageDataGenerator
 import os
 import numpy as np
 import random
-from matplotlib import pyplot as plt
 from PIL import Image
 import math
+from datetime import datetime
 
-IMG_W, IMG_H = 320, 240
+IMG_W, IMG_H = 160, 120
 LOAD = True
 FIT = True
+
+tf.config.threading.set_intra_op_parallelism_threads(10)
+tf.config.threading.set_inter_op_parallelism_threads(10)
 
 def load_data(path='./data/'):
     print('loading from', path, path + "/*.txt")
@@ -33,13 +35,13 @@ def filter_out_zeroes(l):
 def normolize(l):
     print('norm')
     # lx, ly = l
-    coef = np.array([IMG_H, IMG_W]) / 2
-    return l[0] / 255, (l[1] - coef) / coef
+    coef = np.array([IMG_W, IMG_H]) / 2
+    return l[0] / 255, (l[1] / 2 - coef) / coef
 
 
 def denorm(y):
     print('denorm')
-    coef = np.array([IMG_H, IMG_W]) / 2
+    coef = np.array([IMG_W, IMG_H]) / 2
     return np.ceil(y * coef + coef)
 
 
@@ -55,7 +57,7 @@ def shuffle(l, seed=0):
     return l[0][li], l[1][li]
 
 
-def split_train_validate(l, split=0.05, seed=0):
+def split_train_validate(l, split=0.025, seed=0):
     print('splitting')
     # lx, ly = l
     old_seed = random.randint(0, np.power(2, 32))
@@ -75,15 +77,17 @@ def load_and_prepare_data(data_path):
 def create_model():
     print('creating model')
     model = tf.keras.models.Sequential([
-        tf.keras.layers.Flatten(input_shape=(IMG_H, IMG_W)),
-        tf.keras.layers.Dense(3),
+        tf.keras.layers.Conv1D(32, 3, activation='relu', input_shape=(IMG_H, IMG_W)),
+        tf.keras.layers.Flatten(),
+        tf.keras.layers.Dense(2000, activation='relu'),
+        tf.keras.layers.Dense(1000, activation='relu'),
         tf.keras.layers.Dense(2)
     ])
     loss_fn = tf.keras.losses.MeanSquaredError()
 
     model.compile(optimizer='adam',
                   loss=loss_fn,
-                  metrics=['accuracy'])
+                  metrics=['mean_squared_error'])
 
     model.summary()
     return model
@@ -103,7 +107,7 @@ def fit_model(model, lx, ly, save_path="training_1/cp.ckpt"):
     cp_callback = tf.keras.callbacks.ModelCheckpoint(filepath=checkpoint_path,
                                                      save_weights_only=True,
                                                      verbose=1)
-    model.fit(lx, ly, epochs=50, callbacks=[cp_callback])
+    model.fit(lx, ly, epochs=100, callbacks=[cp_callback])
 
 
 def to_greyscale(x):
@@ -112,46 +116,67 @@ def to_greyscale(x):
     return np.sum(x * coef, axis=3)
 
 
+def mark_dot(image, pos, color):
+    for di in range(-1, 2):
+        for dj in range(-1, 2):
+            x = pos[0] + di
+            y = pos[1] + dj
+            if x < 0 or x >= IMG_W:
+                print('ERROR: x out of bounds for pos', pos, 'for image')
+                continue
+            if y < 0 or y >= IMG_H:
+                print('ERROR: x out of bounds for pos', pos, 'for image')
+                continue
+            image[y, x] = color
+    return image
+
+
 def predicted_stats(sx, vy, predicted, save_prefix=''):
     print('Evaluated\n', predicted)
     print('Expected\n', vy)
     print('Diff\n', predicted - vy)
     print('Second norm error\n', np.sum(np.sqrt(predicted * predicted + vy * vy), 1))
     print('Mean squared error', np.mean(np.sum(np.sqrt(predicted * predicted + vy * vy), 1)))
-
+    f = open('log.txt', 'a')
+    f.write('Mean squared error ' + str(np.mean(np.sum(np.sqrt(predicted * predicted + vy * vy), axis=0))) + '\n')
+    f.write('Mean squared error ' + str(np.mean(np.sum(np.sqrt(predicted * predicted + vy * vy), axis=1))) + '\n')
+    f.close()
     dvy = denorm(vy).astype(np.int32)
     dpr = denorm(predicted).astype(np.int32)
     print(dpr)
     sx = (sx * 255).astype(np.uint8)
     for i, (el, dvyi, dpri) in enumerate(zip(sx, dvy, dpr)):
         # el = np.transpose(el, axes=(1, 0, 2))
-        for di in range(-1, 2):
-            for dj in range(-1, 2):
-                x = dvyi[0] + di
-                y = dvyi[1] + dj
-                if x < 0 or x >= IMG_W:
-                    print('ERROR: x out of bounds for dvui', dvyi, 'for image ', i)
-                    continue
-                if y < 0 or y >= IMG_H:
-                    print('ERROR: x out of bounds for dvui', dvyi, 'for image ', i)
-                    continue
-                el[y, x] = np.array([255, 0, 0])
-
-                x = dpri[0] + di
-                y = dpri[1] + dj
-                if x < 0 or x >= IMG_W:
-                    print('ERROR: x out of bounds for dpri', dpri, 'for image ', i)
-                    continue
-                if y < 0 or y >= IMG_H:
-                    print('ERROR: x out of bounds for dpri', dpri, 'for image ', i)
-                    continue
-                el[y, x] = np.array([0, 255, 0])
+        mark_dot(el, dvyi, np.array([255, 0, 0]))
+        mark_dot(el, dpri, np.array([0, 255, 0]))
+        # for di in range(-1, 2):
+        #     for dj in range(-1, 2):
+        #         x = dvyi[0] + di
+        #         y = dvyi[1] + dj
+        #         if x < 0 or x >= IMG_W:
+        #             print('ERROR: x out of bounds for dvui', dvyi, 'for image ', i)
+        #             continue
+        #         if y < 0 or y >= IMG_H:
+        #             print('ERROR: x out of bounds for dvui', dvyi, 'for image ', i)
+        #             continue
+        #         el[y, x] = np.array([255, 0, 0])
+        #
+        #         x = dpri[0] + di
+        #         y = dpri[1] + dj
+        #         if x < 0 or x >= IMG_W:
+        #             print('ERROR: x out of bounds for dpri', dpri, 'for image ', i)
+        #             continue
+        #         if y < 0 or y >= IMG_H:
+        #             print('ERROR: x out of bounds for dpri', dpri, 'for image ', i)
+        #             continue
+        #         el[y, x] = np.array([0, 255, 0])
 
         Image.fromarray(el).save('./predicted/' + save_prefix + str(i) + '.png')
         # plt.imshow(el, interpolation='nearest')
         # plt.savefig('./predicted/' + str(i) + '.png')
 
-def check_vis(sx, vy):
+
+def check_vis(sx, vy, save_prefix):
     dvy = denorm(vy).astype(np.int32)
     sx = (sx * 255).astype(np.uint8)
     for i, (el, dvyi) in enumerate(zip(sx, dvy)):
@@ -167,10 +192,11 @@ def check_vis(sx, vy):
                     print('ERROR: x out of bounds for dvui', dvyi, 'for image ', i)
                     continue
                 el[y, x] = np.array([255, 0, 0])
-        
+
         Image.fromarray(el).save('./test/' + save_prefix + str(i) + '.png')
         # plt.imshow(el, interpolation='nearest')
         # plt.savefig('./test/' + str(i) + '.png')
+
 
 def main(data_path='./data', save_prefix=''):
     lx, ly, sx, vy = load_and_prepare_data(data_path)
@@ -190,7 +216,6 @@ def main(data_path='./data', save_prefix=''):
     if FIT:
         fit_model(model, lx, ly)
 
-
     model.evaluate(lx, ly, verbose=2)
     model.evaluate(vx, vy, verbose=2)
     print(sx, vy)
@@ -198,7 +223,14 @@ def main(data_path='./data', save_prefix=''):
 
 
 if __name__ == '__main__':
-    LOAD = True
-    for folder in os.listdir('./data'):
-        main(data_path='./data/' + folder, save_prefix=folder + '_')
-        LOAD = True
+    LOAD = False
+    data = os.listdir('./data')
+    print(data)
+    for i in range(5):
+        data = data[0]
+        for folder in data:
+            main(data_path='./data/' + folder, save_prefix=folder + '_')
+            LOAD = True
+            f = open('log.txt', 'a')
+            f.write('Batch done ' + str(folder) + ' at ' + datetime.now().strftime("%H:%M:%S") + '\n----\n')
+            f.close()

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d1c4d6e8-08fc-466f-a358-acb113427b46" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/blender/plate.py" beforeDir="false" afterPath="$PROJECT_DIR$/blender/plate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blender/shape_texture/IMG_159.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blender/shape_texture/IMG_160.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blender/untitled.blend" beforeDir="false" afterPath="$PROJECT_DIR$/blender/untitled.blend" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blender/untitled.blend1" beforeDir="false" afterPath="$PROJECT_DIR$/blender/untitled.blend1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/ml/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml/training_1/checkpoint" beforeDir="false" afterPath="$PROJECT_DIR$/ml/training_1/checkpoint" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml/training_1/cp.ckpt.data-00000-of-00001" beforeDir="false" afterPath="$PROJECT_DIR$/ml/training_1/cp.ckpt.data-00000-of-00001" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml/training_1/cp.ckpt.index" beforeDir="false" afterPath="$PROJECT_DIR$/ml/training_1/cp.ckpt.index" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="28Hyvvt9FWtOwsuOwo9kowwFkUG" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/ml" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.build" />
+  </component>
+  <component name="RunManager">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="vision_for_chpu_diplom" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ml" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ml/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d1c4d6e8-08fc-466f-a358-acb113427b46" name="Changes" comment="" />
+      <created>1650888039884</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1650888039884</updated>
+    </task>
+    <servers />
+  </component>
+</project>

@@ -1,5 +1,9 @@
 blender/[0-9]*
+blender/test_run
+ml/server/*
 ml/data/*
+ml/training_*/*
+ml/data_old/*
 ml/predicted/*
 ml/test/*
 ml/.venv

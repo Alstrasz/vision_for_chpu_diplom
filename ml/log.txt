@@ -1,0 +1,1088 @@
+Mean squared error 16.729868168943838
+Mean squared error 1.338389453515507
+Batch done 0 at 21:00:47
+----
+Mean squared error 16.490333276395656
+Mean squared error 1.3192266621116524
+Batch done 1 at 21:03:57
+----
+Mean squared error 11.084963029837946
+Mean squared error 0.8867970423870356
+Batch done 10 at 21:07:05
+----
+Mean squared error 16.6669062717912
+Mean squared error 1.3333525017432957
+Batch done 11 at 21:10:15
+----
+Mean squared error 18.07705500016629
+Mean squared error 1.4461644000133032
+Batch done 12 at 21:13:23
+----
+Mean squared error 8.109031799126656
+Mean squared error 0.6487225439301325
+Batch done 13 at 21:16:23
+----
+Mean squared error 15.406991962013109
+Mean squared error 1.2325593569610487
+Batch done 14 at 21:19:25
+----
+Mean squared error 17.592970674330186
+Mean squared error 1.4074376539464146
+Batch done 15 at 21:22:28
+----
+Mean squared error 18.41870138479594
+Mean squared error 1.473496110783675
+Batch done 16 at 21:25:27
+----
+Mean squared error 13.170871470411576
+Mean squared error 1.646358933801447
+Batch done 17 at 21:27:39
+----
+Mean squared error 19.27376855251577
+Mean squared error 1.5419014842012615
+Batch done 18 at 21:30:49
+----
+Mean squared error 17.824173796845503
+Mean squared error 1.4259339037476406
+Batch done 19 at 21:34:10
+----
+Mean squared error 17.469608644658734
+Mean squared error 1.3975686915726984
+Batch done 2 at 21:37:15
+----
+Mean squared error 20.66537554962323
+Mean squared error 1.6532300439698582
+Batch done 20 at 21:40:19
+----
+Mean squared error 18.541119430510882
+Mean squared error 1.4832895544408708
+Batch done 21 at 21:43:21
+----
+Mean squared error 19.6844740342111
+Mean squared error 1.5747579227368882
+Batch done 22 at 21:46:24
+----
+Mean squared error 17.79569382354759
+Mean squared error 1.423655505883807
+Batch done 23 at 21:49:24
+----
+Mean squared error 19.867839578141407
+Mean squared error 1.5894271662513129
+Batch done 24 at 21:52:25
+----
+Mean squared error 16.49765243376101
+Mean squared error 1.319812194700881
+Batch done 25 at 21:55:27
+----
+Mean squared error 14.667853263062732
+Mean squared error 1.1734282610450186
+Batch done 26 at 21:58:33
+----
+Mean squared error 10.040979488730528
+Mean squared error 1.8256326343146414
+Batch done 27 at 22:00:16
+----
+Mean squared error 21.240113970650036
+Mean squared error 1.6992091176520032
+Batch done 28 at 22:03:15
+----
+Mean squared error 17.931573995816333
+Mean squared error 1.4345259196653073
+Batch done 29 at 22:06:16
+----
+Mean squared error 18.169664327629608
+Mean squared error 1.4535731462103687
+Batch done 3 at 22:09:20
+----
+Mean squared error 16.474235428059988
+Mean squared error 1.7341300450589465
+Batch done 30 at 22:11:45
+----
+Mean squared error 16.483923692871436
+Mean squared error 1.318713895429715
+Batch done 31 at 22:14:49
+----
+Mean squared error 19.830093679704767
+Mean squared error 1.586407494376381
+Batch done 32 at 22:17:50
+----
+Mean squared error 17.756707350267796
+Mean squared error 1.4205365880214234
+Batch done 33 at 22:20:54
+----
+Mean squared error 17.812870698661445
+Mean squared error 1.4250296558929159
+Batch done 34 at 22:24:00
+----
+Mean squared error 15.777697185022799
+Mean squared error 1.2622157748018237
+Batch done 35 at 22:27:19
+----
+Mean squared error 17.435225875820265
+Mean squared error 1.3948180700656214
+Batch done 36 at 22:30:28
+----
+Mean squared error 20.103701861648005
+Mean squared error 1.7481479879693917
+Batch done 37 at 22:33:15
+----
+Mean squared error 17.27050563407022
+Mean squared error 1.3816404507256173
+Batch done 39 at 22:40:31
+----
+Mean squared error 17.531595063728854
+Mean squared error 1.4025276050983084
+Batch done 4 at 22:43:33
+----
+Mean squared error 15.743462448447348
+Mean squared error 1.2594769958757879
+Batch done 40 at 22:46:35
+----
+Mean squared error 15.94048744350306
+Mean squared error 1.2752389954802446
+Batch done 41 at 22:49:36
+----
+Mean squared error 20.659319297108254
+Mean squared error 1.6527455437686605
+Batch done 42 at 22:52:35
+----
+Mean squared error 15.382697141443161
+Mean squared error 1.2306157713154529
+Batch done 43 at 22:55:35
+----
+Mean squared error 16.70765603774209
+Mean squared error 1.3366124830193675
+Batch done 44 at 22:58:35
+----
+Mean squared error 19.034356545956506
+Mean squared error 1.5227485236765204
+Batch done 45 at 23:01:34
+----
+Mean squared error 16.298218231712706
+Mean squared error 1.3038574585370164
+Batch done 46 at 23:04:33
+----
+Mean squared error 21.073649285845907
+Mean squared error 1.6858919428676726
+Batch done 47 at 23:07:31
+----
+Mean squared error 16.993208959508294
+Mean squared error 1.3594567167606633
+Batch done 48 at 23:10:30
+----
+Mean squared error 17.604922212788853
+Mean squared error 1.4083937770231085
+Batch done 49 at 23:13:41
+----
+Mean squared error 16.85830491290461
+Mean squared error 1.348664393032369
+Batch done 5 at 23:16:47
+----
+Mean squared error 17.29735962792039
+Mean squared error 1.3837887702336311
+Batch done 6 at 23:19:50
+----
+Mean squared error 18.313591691417415
+Mean squared error 1.4650873353133935
+Batch done 7 at 23:22:59
+----
+Mean squared error 15.385168610145552
+Mean squared error 1.2308134888116442
+Batch done 8 at 23:26:07
+----
+Mean squared error 16.303239148884273
+Mean squared error 1.304259131910742
+Batch done 9 at 23:29:20
+----
+Mean squared error 16.85571804939392
+Mean squared error 1.3484574439515138
+Batch done 0 at 23:32:28
+----
+Mean squared error 16.75735696674176
+Mean squared error 1.3405885573393408
+Batch done 1 at 23:35:27
+----
+Mean squared error 11.38374160502611
+Mean squared error 0.9106993284020891
+Batch done 10 at 23:38:35
+----
+Mean squared error 16.45548082002013
+Mean squared error 1.3164384656016108
+Batch done 11 at 23:41:48
+----
+Mean squared error 18.237172439731086
+Mean squared error 1.4589737951784867
+Batch done 12 at 23:44:54
+----
+Mean squared error 8.276329202127561
+Mean squared error 0.6621063361702051
+Batch done 13 at 23:47:50
+----
+Mean squared error 15.433346722325874
+Mean squared error 1.23466773778607
+Batch done 14 at 23:50:56
+----
+Mean squared error 17.515019877784784
+Mean squared error 1.4012015902227828
+Batch done 15 at 23:53:55
+----
+Mean squared error 18.90382615937377
+Mean squared error 1.5123060927499015
+Batch done 16 at 23:56:56
+----
+Mean squared error 13.206794287774045
+Mean squared error 1.6508492859717558
+Batch done 17 at 23:59:02
+----
+Mean squared error 19.330529810400712
+Mean squared error 1.546442384832057
+Batch done 18 at 00:02:05
+----
+Mean squared error 18.003942705287415
+Mean squared error 1.440315416422993
+Batch done 19 at 00:05:05
+----
+Mean squared error 17.635250786318174
+Mean squared error 1.410820062905454
+Batch done 2 at 00:08:05
+----
+Mean squared error 20.697278933433683
+Mean squared error 1.6557823146746948
+Batch done 20 at 00:11:22
+----
+Mean squared error 18.343563522003326
+Mean squared error 1.467485081760266
+Batch done 21 at 00:14:32
+----
+Mean squared error 20.090984139647773
+Mean squared error 1.6072787311718215
+Batch done 22 at 00:17:34
+----
+Mean squared error 17.504370988657932
+Mean squared error 1.4003496790926346
+Batch done 23 at 00:20:40
+----
+Mean squared error 19.92167983757215
+Mean squared error 1.5937343870057716
+Batch done 24 at 00:23:43
+----
+Mean squared error 19.70443227808735
+Mean squared error 1.576354582246988
+Batch done 24 at 00:29:06
+----
+Mean squared error 16.61015514601418
+Mean squared error 1.3288124116811346
+Batch done 25 at 00:32:16
+----
+Mean squared error 14.558989513202514
+Mean squared error 1.1647191610562013
+Batch done 26 at 00:35:23
+----
+Mean squared error 9.795299918026416
+Mean squared error 1.7809636214593483
+Batch done 27 at 00:37:06
+----
+Mean squared error 21.13401206373326
+Mean squared error 1.690720965098661
+Batch done 28 at 00:40:01
+----
+Mean squared error 17.173617852212907
+Mean squared error 1.3738894281770326
+Batch done 29 at 00:43:07
+----
+Mean squared error 17.549998874682707
+Mean squared error 1.4039999099746168
+Batch done 3 at 00:46:09
+----
+Mean squared error 16.267099890622944
+Mean squared error 1.7123263042760994
+Batch done 30 at 00:48:32
+----
+Mean squared error 16.167105213985018
+Mean squared error 1.2933684171188014
+Batch done 31 at 00:51:40
+----
+Mean squared error 19.85538468795926
+Mean squared error 1.5884307750367406
+Batch done 32 at 00:54:46
+----
+Mean squared error 17.559695932576858
+Mean squared error 1.4047756746061486
+Batch done 33 at 00:57:48
+----
+Mean squared error 17.58232119728512
+Mean squared error 1.4065856957828096
+Batch done 34 at 01:00:52
+----
+Mean squared error 16.105343829675373
+Mean squared error 1.2884275063740298
+Batch done 35 at 01:03:57
+----
+Mean squared error 17.51850159008804
+Mean squared error 1.401480127207043
+Batch done 36 at 01:06:59
+----
+Mean squared error 19.557410406435864
+Mean squared error 1.700644383168336
+Batch done 37 at 01:09:48
+----
+Mean squared error 17.596074654376284
+Mean squared error 1.4076859723501027
+Batch done 38 at 01:12:49
+----
+Mean squared error 17.080036334385632
+Mean squared error 1.3664029067508503
+Batch done 39 at 01:15:51
+----
+Mean squared error 17.348425841297846
+Mean squared error 1.3878740673038275
+Batch done 4 at 01:18:55
+----
+Mean squared error 15.627105074452974
+Mean squared error 1.250168405956238
+Batch done 40 at 01:21:55
+----
+Mean squared error 16.30288861390076
+Mean squared error 1.3042310891120605
+Batch done 41 at 01:25:00
+----
+Mean squared error 20.60818907351321
+Mean squared error 1.6486551258810567
+Batch done 42 at 01:28:05
+----
+Mean squared error 15.070005191058026
+Mean squared error 1.205600415284642
+Batch done 43 at 01:31:08
+----
+Mean squared error 16.601099463112497
+Mean squared error 1.328087957049
+Batch done 44 at 01:34:06
+----
+Mean squared error 19.492476172163347
+Mean squared error 1.5593980937730678
+Batch done 45 at 01:37:09
+----
+Mean squared error 16.25970475494699
+Mean squared error 1.3007763803957593
+Batch done 46 at 01:40:15
+----
+Mean squared error 16.618269413722402
+Mean squared error 1.3294615530977918
+Batch done 5 at 01:47:21
+----
+Mean squared error 17.819726036240148
+Mean squared error 1.4255780828992122
+Batch done 6 at 01:50:22
+----
+Mean squared error 17.97273528158744
+Mean squared error 1.4378188225269957
+Batch done 7 at 01:53:19
+----
+Mean squared error 15.551515912427586
+Mean squared error 1.2441212729942068
+Batch done 8 at 01:56:20
+----
+Mean squared error 15.92059081134401
+Mean squared error 1.2736472649075208
+Batch done 9 at 01:59:21
+----
+Mean squared error 16.87889678016456
+Mean squared error 1.3503117424131648
+Batch done 0 at 13:23:11
+----
+Mean squared error 16.624159715330176
+Mean squared error 1.3299327772264145
+Batch done 1 at 13:26:12
+----
+Mean squared error 11.212972082912376
+Mean squared error 0.89703776663299
+Batch done 10 at 13:29:11
+----
+Mean squared error 16.32567099144759
+Mean squared error 1.3060536793158075
+Batch done 11 at 13:32:12
+----
+Mean squared error 18.24471706969529
+Mean squared error 1.4595773655756235
+Batch done 12 at 13:35:09
+----
+Mean squared error 8.010261140057754
+Mean squared error 0.6408208912046202
+Batch done 13 at 13:38:06
+----
+Mean squared error 15.564395297238795
+Mean squared error 1.2451516237791034
+Batch done 14 at 13:41:10
+----
+Mean squared error 17.987583526619986
+Mean squared error 1.4390066821295988
+Batch done 15 at 13:44:10
+----
+Mean squared error 18.44359222727328
+Mean squared error 1.475487378181863
+Batch done 16 at 13:47:08
+----
+Mean squared error 13.32157103298936
+Mean squared error 1.6651963791236701
+Batch done 17 at 13:49:14
+----
+Mean squared error 19.120498531779255
+Mean squared error 1.5296398825423407
+Batch done 18 at 13:52:08
+----
+Mean squared error 17.729341047607264
+Mean squared error 1.418347283808581
+Batch done 19 at 13:55:01
+----
+Mean squared error 17.527675648392226
+Mean squared error 1.4022140518713784
+Batch done 2 at 13:57:59
+----
+Mean squared error 20.559159465132097
+Mean squared error 1.6447327572105679
+Batch done 20 at 14:00:55
+----
+Mean squared error 18.60223065071418
+Mean squared error 1.4881784520571344
+Batch done 21 at 14:03:49
+----
+Mean squared error 19.642179872194887
+Mean squared error 1.5713743897755907
+Batch done 22 at 14:06:46
+----
+Mean squared error 17.56842826784331
+Mean squared error 1.4054742614274645
+Batch done 23 at 14:09:46
+----
+Mean squared error 19.92974128832855
+Mean squared error 1.594379303066284
+Batch done 24 at 14:12:47
+----
+Mean squared error 16.428550154994337
+Mean squared error 1.3142840123995472
+Batch done 25 at 14:15:47
+----
+Mean squared error 14.608050999567043
+Mean squared error 1.1686440799653637
+Batch done 26 at 14:18:48
+----
+Mean squared error 9.875671469761215
+Mean squared error 1.7955766308656758
+Batch done 27 at 14:20:29
+----
+Mean squared error 21.127813988806178
+Mean squared error 1.6902251191044941
+Batch done 28 at 14:23:29
+----
+Mean squared error 17.529983372120718
+Mean squared error 1.4023986697696578
+Batch done 29 at 14:26:20
+----
+Mean squared error 18.152048914297517
+Mean squared error 1.4521639131438013
+Batch done 3 at 14:29:16
+----
+Mean squared error 16.3609548901303
+Mean squared error 1.7222057779084528
+Batch done 30 at 14:31:36
+----
+Mean squared error 16.41618886564715
+Mean squared error 1.313295109251772
+Batch done 31 at 14:34:27
+----
+Mean squared error 19.801377901394545
+Mean squared error 1.5841102321115637
+Batch done 32 at 14:37:21
+----
+Mean squared error 17.634514708572212
+Mean squared error 1.4107611766857766
+Batch done 33 at 14:40:16
+----
+Mean squared error 16.055306983215335
+Mean squared error 1.2844245586572272
+Batch done 35 at 15:03:13
+----
+Mean squared error 17.068397810419988
+Mean squared error 1.365471824833599
+Batch done 36 at 15:06:09
+----
+Mean squared error 19.899378805910988
+Mean squared error 1.730380765731391
+Batch done 37 at 15:08:49
+----
+Mean squared error 17.63375526311487
+Mean squared error 1.4107004210491894
+Batch done 38 at 15:11:42
+----
+Mean squared error 16.872571377210654
+Mean squared error 1.3498057101768521
+Batch done 39 at 15:14:34
+----
+Mean squared error 17.73553233026629
+Mean squared error 1.4188425864213037
+Batch done 4 at 15:17:29
+----
+Mean squared error 15.580913582571398
+Mean squared error 1.2464730866057119
+Batch done 40 at 15:20:21
+----
+Mean squared error 16.582980136583142
+Mean squared error 1.3266384109266511
+Batch done 41 at 15:23:13
+----
+Mean squared error 20.348400546241834
+Mean squared error 1.6278720436993463
+Batch done 42 at 15:26:03
+----
+Mean squared error 15.88580399876231
+Mean squared error 1.2708643199009848
+Batch done 43 at 15:28:57
+----
+Mean squared error 16.26896816776371
+Mean squared error 1.3015174534210967
+Batch done 44 at 15:31:49
+----
+Mean squared error 18.943469931382573
+Mean squared error 1.5154775945106056
+Batch done 45 at 15:34:40
+----
+Mean squared error 15.809028338940442
+Mean squared error 1.2647222671152356
+Batch done 46 at 15:37:34
+----
+Mean squared error 21.151555218597352
+Mean squared error 1.6921244174877885
+Batch done 47 at 15:40:26
+----
+Mean squared error 17.528430184057438
+Mean squared error 1.4022744147245951
+Batch done 48 at 15:43:19
+----
+Mean squared error 18.087597729320542
+Mean squared error 1.4470078183456438
+Batch done 49 at 15:46:10
+----
+Mean squared error 16.894707910048886
+Mean squared error 1.3515766328039107
+Batch done 5 at 15:49:01
+----
+Mean squared error 17.731906202658358
+Mean squared error 1.4185524962126685
+Batch done 6 at 15:51:52
+----
+Mean squared error 18.294420356852275
+Mean squared error 1.463553628548182
+Batch done 7 at 15:54:43
+----
+Mean squared error 15.753546961573825
+Mean squared error 1.2602837569259058
+Batch done 8 at 15:57:37
+----
+Mean squared error 16.493829284750916
+Mean squared error 1.3195063427800733
+Batch done 9 at 16:00:30
+----
+Mean squared error 15.775607601037883
+Mean squared error 1.2620486080830307
+Batch done 35 at 16:03:20
+----
+Mean squared error 17.05525666095543
+Mean squared error 1.3644205328764345
+Batch done 36 at 16:06:09
+----
+Mean squared error 20.10749465672819
+Mean squared error 1.7484777962372338
+Batch done 37 at 16:08:48
+----
+Mean squared error 17.256311530202158
+Mean squared error 1.3805049224161727
+Batch done 38 at 16:11:40
+----
+Mean squared error 16.865815477747386
+Mean squared error 1.349265238219791
+Batch done 39 at 16:14:29
+----
+Mean squared error 17.769632439271813
+Mean squared error 1.4215705951417454
+Batch done 4 at 16:17:22
+----
+Mean squared error 15.554814729896885
+Mean squared error 1.2443851783917506
+Batch done 40 at 16:20:12
+----
+Mean squared error 16.51594992015185
+Mean squared error 1.321275993612148
+Batch done 41 at 16:23:03
+----
+Mean squared error 20.61574760836339
+Mean squared error 1.6492598086690708
+Batch done 42 at 16:25:53
+----
+Mean squared error 15.057157760282266
+Mean squared error 1.204572620822581
+Batch done 43 at 16:28:46
+----
+Mean squared error 16.333709218868197
+Mean squared error 1.3066967375094558
+Batch done 44 at 16:31:37
+----
+Mean squared error 19.224962130162318
+Mean squared error 1.5379969704129854
+Batch done 45 at 16:34:27
+----
+Mean squared error 15.557261931414875
+Mean squared error 1.24458095451319
+Batch done 46 at 16:37:17
+----
+Mean squared error 21.018266485313724
+Mean squared error 1.6814613188250982
+Batch done 47 at 16:40:08
+----
+Mean squared error 16.679295990521712
+Mean squared error 1.334343679241737
+Batch done 48 at 16:42:57
+----
+Mean squared error 17.81272270380738
+Mean squared error 1.4250178163045908
+Batch done 49 at 16:45:47
+----
+Mean squared error 16.705405617079535
+Mean squared error 1.3364324493663624
+Batch done 5 at 16:48:39
+----
+Mean squared error 17.522482996833315
+Mean squared error 1.401798639746665
+Batch done 6 at 16:51:32
+----
+Mean squared error 18.15963773682833
+Mean squared error 1.4527710189462664
+Batch done 7 at 16:54:25
+----
+Mean squared error 15.800923412541328
+Mean squared error 1.2640738730033063
+Batch done 8 at 16:57:19
+----
+Mean squared error 16.232519469661625
+Mean squared error 1.29860155757293
+Batch done 9 at 17:00:12
+----
+Mean squared error 17.04664862167451
+Mean squared error 1.3637318897339608
+Batch done 0 at 18:56:47
+----
+Mean squared error 16.622458218094774
+Mean squared error 1.329796657447582
+Batch done 1 at 18:59:50
+----
+Mean squared error 11.15207890615033
+Mean squared error 0.8921663124920266
+Batch done 10 at 19:02:46
+----
+Mean squared error 16.73639297190961
+Mean squared error 1.3389114377527687
+Batch done 11 at 19:05:41
+----
+Mean squared error 17.913104620686
+Mean squared error 1.4330483696548797
+Batch done 12 at 19:08:36
+----
+Mean squared error 8.152724576435045
+Mean squared error 0.6522179661148038
+Batch done 13 at 19:11:29
+----
+Mean squared error 15.544351830698428
+Mean squared error 1.2435481464558742
+Batch done 14 at 19:14:26
+----
+Mean squared error 17.041917074237727
+Mean squared error 1.3633533659390182
+Batch done 15 at 19:17:30
+----
+Mean squared error 18.638228377912192
+Mean squared error 1.4910582702329755
+Batch done 16 at 19:20:34
+----
+Mean squared error 13.364921733888027
+Mean squared error 1.670615216736003
+Batch done 17 at 19:22:45
+----
+Mean squared error 18.806424858659497
+Mean squared error 1.50451398869276
+Batch done 18 at 19:25:53
+----
+Mean squared error 17.42864158102511
+Mean squared error 1.394291326482009
+Batch done 19 at 19:28:57
+----
+Mean squared error 17.383511067661424
+Mean squared error 1.3906808854129142
+Batch done 2 at 19:31:54
+----
+Mean squared error 20.49556184796372
+Mean squared error 1.6396449478370974
+Batch done 20 at 19:34:49
+----
+Mean squared error 18.175540044240126
+Mean squared error 1.4540432035392101
+Batch done 21 at 19:37:45
+----
+Mean squared error 19.781224883658005
+Mean squared error 1.58249799069264
+Batch done 22 at 19:40:44
+----
+Mean squared error 17.61019584388759
+Mean squared error 1.408815667511007
+Batch done 23 at 19:43:42
+----
+Mean squared error 20.138517495620157
+Mean squared error 1.6110813996496127
+Batch done 24 at 19:46:38
+----
+Mean squared error 17.38159065401942
+Mean squared error 1.3905272523215533
+Batch done 25 at 19:49:34
+----
+Mean squared error 14.781056749522087
+Mean squared error 1.182484539961767
+Batch done 26 at 19:52:31
+----
+Mean squared error 9.333803690468663
+Mean squared error 1.697055216448848
+Batch done 27 at 19:54:13
+----
+Mean squared error 21.257338825330784
+Mean squared error 1.7005871060264623
+Batch done 28 at 19:57:04
+----
+Mean squared error 17.006679633891974
+Mean squared error 1.360534370711358
+Batch done 29 at 20:00:00
+----
+Mean squared error 17.866540608691547
+Mean squared error 1.4293232486953238
+Batch done 3 at 20:02:57
+----
+Mean squared error 16.30078512397906
+Mean squared error 1.7158721183135854
+Batch done 30 at 20:05:16
+----
+Mean squared error 16.576082485184678
+Mean squared error 1.3260865988147739
+Batch done 31 at 20:08:11
+----
+Mean squared error 19.998892160965184
+Mean squared error 1.599911372877215
+Batch done 32 at 20:11:04
+----
+Mean squared error 16.722021904048987
+Mean squared error 1.3377617523239187
+Batch done 33 at 20:14:00
+----
+Mean squared error 17.702348642806037
+Mean squared error 1.416187891424483
+Batch done 34 at 20:16:55
+----
+Mean squared error 15.752547141444564
+Mean squared error 1.260203771315565
+Batch done 35 at 20:19:49
+----
+Mean squared error 17.50309185949259
+Mean squared error 1.4002473487594076
+Batch done 36 at 20:22:47
+----
+Mean squared error 19.899486045616747
+Mean squared error 1.7303900909231948
+Batch done 37 at 20:25:30
+----
+Mean squared error 17.262023557960514
+Mean squared error 1.3809618846368414
+Batch done 38 at 20:28:28
+----
+Mean squared error 17.529209979252713
+Mean squared error 1.4023367983402166
+Batch done 39 at 20:31:31
+----
+Mean squared error 18.088335898403507
+Mean squared error 1.4470668718722806
+Batch done 4 at 20:34:37
+----
+Mean squared error 15.163866562353565
+Mean squared error 1.2131093249882854
+Batch done 40 at 20:37:38
+----
+Mean squared error 16.714244719110198
+Mean squared error 1.3371395775288157
+Batch done 41 at 20:40:38
+----
+Mean squared error 20.512024515298236
+Mean squared error 1.6409619612238586
+Batch done 42 at 20:43:40
+----
+Mean squared error 15.027390345981146
+Mean squared error 1.2021912276784916
+Batch done 43 at 20:46:40
+----
+Mean squared error 16.63066201774595
+Mean squared error 1.330452961419676
+Batch done 44 at 20:49:43
+----
+Mean squared error 19.34152182298064
+Mean squared error 1.5473217458384512
+Batch done 45 at 20:52:42
+----
+Mean squared error 15.956093411985016
+Mean squared error 1.2764874729588014
+Batch done 46 at 20:55:45
+----
+Mean squared error 20.698399173239537
+Mean squared error 1.655871933859163
+Batch done 47 at 20:58:50
+----
+Mean squared error 16.817499540230234
+Mean squared error 1.3453999632184186
+Batch done 48 at 21:01:54
+----
+Mean squared error 17.388381720747354
+Mean squared error 1.3910705376597887
+Batch done 49 at 21:05:01
+----
+Mean squared error 16.954472486195602
+Mean squared error 1.356357798895648
+Batch done 5 at 21:07:58
+----
+Mean squared error 17.57604535169714
+Mean squared error 1.4060836281357711
+Batch done 6 at 21:11:10
+----
+Mean squared error 18.187918911807483
+Mean squared error 1.4550335129445986
+Batch done 7 at 21:14:18
+----
+Mean squared error 15.587375177300828
+Mean squared error 1.2469900141840662
+Batch done 8 at 21:17:18
+----
+Mean squared error 16.154109683341552
+Mean squared error 1.2923287746673242
+Batch done 9 at 21:20:19
+----
+Mean squared error 16.97709274552168
+Mean squared error 1.3581674196417348
+Batch done 0 at 21:23:15
+----
+Mean squared error 16.37282862660541
+Mean squared error 1.309826290128433
+Batch done 1 at 21:26:15
+----
+Mean squared error 11.0436775588387
+Mean squared error 0.883494204707096
+Batch done 10 at 21:29:13
+----
+Mean squared error 16.453247192727915
+Mean squared error 1.3162597754182332
+Batch done 11 at 21:32:13
+----
+Mean squared error 18.30030989534606
+Mean squared error 1.464024791627685
+Batch done 12 at 21:35:09
+----
+Mean squared error 8.25770618105031
+Mean squared error 0.6606164944840249
+Batch done 13 at 21:38:06
+----
+Mean squared error 15.80535225909595
+Mean squared error 1.2644281807276758
+Batch done 14 at 21:41:08
+----
+Mean squared error 17.73373286308539
+Mean squared error 1.418698629046831
+Batch done 15 at 21:44:10
+----
+Mean squared error 18.431230520289887
+Mean squared error 1.4744984416231912
+Batch done 16 at 21:47:12
+----
+Mean squared error 13.706397816165467
+Mean squared error 1.7132997270206833
+Batch done 17 at 21:49:17
+----
+Mean squared error 19.332900032460856
+Mean squared error 1.5466320025968685
+Batch done 18 at 21:52:19
+----
+Mean squared error 17.99491107462309
+Mean squared error 1.4395928859698472
+Batch done 19 at 21:55:22
+----
+Mean squared error 17.941157479348114
+Mean squared error 1.435292598347849
+Batch done 2 at 21:58:24
+----
+Mean squared error 20.927460589320507
+Mean squared error 1.67419684714564
+Batch done 20 at 22:01:27
+----
+Mean squared error 18.232222769956756
+Mean squared error 1.4585778215965406
+Batch done 21 at 22:04:27
+----
+Mean squared error 19.577750588475645
+Mean squared error 1.5662200470780516
+Batch done 22 at 22:07:31
+----
+Mean squared error 17.72936442254392
+Mean squared error 1.4183491538035133
+Batch done 23 at 22:10:32
+----
+Mean squared error 20.045084357046925
+Mean squared error 1.6036067485637542
+Batch done 24 at 22:13:35
+----
+Mean squared error 16.934312352312475
+Mean squared error 1.3547449881849978
+Batch done 25 at 22:16:36
+----
+Mean squared error 14.471562357020282
+Mean squared error 1.1577249885616228
+Batch done 26 at 22:19:37
+----
+Mean squared error 10.071475510664909
+Mean squared error 1.8311773655754384
+Batch done 27 at 22:21:17
+----
+Mean squared error 21.289318266505912
+Mean squared error 1.703145461320473
+Batch done 28 at 22:24:16
+----
+Mean squared error 16.88215536869232
+Mean squared error 1.3505724294953856
+Batch done 29 at 22:27:17
+----
+Mean squared error 18.201856429263486
+Mean squared error 1.4561485143410788
+Batch done 3 at 22:30:22
+----
+Mean squared error 16.648942693694096
+Mean squared error 1.7525202835467468
+Batch done 30 at 22:32:40
+----
+Mean squared error 16.9147581275808
+Mean squared error 1.3531806502064638
+Batch done 31 at 22:35:33
+----
+Mean squared error 20.30419889575193
+Mean squared error 1.6243359116601548
+Batch done 32 at 22:38:28
+----
+Mean squared error 17.606821242247094
+Mean squared error 1.4085456993797676
+Batch done 33 at 22:41:20
+----
+Mean squared error 17.70437350356687
+Mean squared error 1.4163498802853496
+Batch done 34 at 22:44:15
+----
+Mean squared error 16.42472702175483
+Mean squared error 1.3139781617403863
+Batch done 35 at 22:47:08
+----
+Mean squared error 17.44767689177391
+Mean squared error 1.3958141513419124
+Batch done 36 at 22:50:03
+----
+Mean squared error 20.08573073975172
+Mean squared error 1.746585281717541
+Batch done 37 at 22:52:43
+----
+Mean squared error 17.342371961780962
+Mean squared error 1.3873897569424767
+Batch done 38 at 22:55:38
+----
+Mean squared error 16.79505698067792
+Mean squared error 1.3436045584542335
+Batch done 39 at 22:58:32
+----
+Mean squared error 17.6307792471015
+Mean squared error 1.4104623397681197
+Batch done 4 at 23:01:25
+----
+Mean squared error 15.344927408517083
+Mean squared error 1.2275941926813665
+Batch done 40 at 23:04:20
+----
+Mean squared error 16.494214953901157
+Mean squared error 1.3195371963120928
+Batch done 41 at 23:07:15
+----
+Mean squared error 20.690138170115844
+Mean squared error 1.6552110536092675
+Batch done 42 at 23:10:08
+----
+Mean squared error 16.336280130209506
+Mean squared error 1.3069024104167604
+Batch done 43 at 23:13:07
+----
+Mean squared error 16.59890318116716
+Mean squared error 1.3279122544933728
+Batch done 44 at 23:16:07
+----
+Mean squared error 19.23510570843812
+Mean squared error 1.53880845667505
+Batch done 45 at 23:19:07
+----
+Mean squared error 15.708759324015595
+Mean squared error 1.2567007459212474
+Batch done 46 at 23:22:05
+----
+Mean squared error 21.092906823239723
+Mean squared error 1.6874325458591775
+Batch done 47 at 23:25:03
+----
+Mean squared error 17.019377275882256
+Mean squared error 1.3615501820705804
+Batch done 48 at 23:27:57
+----
+Mean squared error 17.77032054331681
+Mean squared error 1.4216256434653445
+Batch done 49 at 23:30:58
+----
+Mean squared error 16.795462385071808
+Mean squared error 1.3436369908057448
+Batch done 5 at 23:34:03
+----
+Mean squared error 17.253323452709775
+Mean squared error 1.3802658762167823
+Batch done 6 at 23:37:07
+----
+Mean squared error 18.385705737357906
+Mean squared error 1.4708564589886324
+Batch done 7 at 23:40:10
+----
+Mean squared error 15.545712283311632
+Mean squared error 1.2436569826649306
+Batch done 8 at 23:43:11
+----
+Mean squared error 16.30021383838293
+Mean squared error 1.3040171070706343
+Batch done 9 at 23:46:18
+----
+Mean squared error 17.011053611243767
+Mean squared error 1.3608842888995014
+Batch done 0 at 01:26:43
+----
+Mean squared error 17.053859991525528
+Mean squared error 1.364308799322042
+Batch done 0 at 01:30:10
+----
+Mean squared error 16.72868125231014
+Mean squared error 1.3382945001848114
+Batch done 0 at 01:33:38
+----
+Mean squared error 16.84411255135985
+Mean squared error 1.3475290041087877
+Batch done 0 at 01:37:09
+----
+Mean squared error 16.872771091364235
+Mean squared error 1.3498216873091389
+Batch done 0 at 01:40:37
+----

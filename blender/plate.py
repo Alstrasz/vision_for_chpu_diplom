@@ -4,6 +4,9 @@ import math, random
 from typing import List, Tuple
 import time
 import numpy as np
+import requests
+import json
+
 
 def generate_polygon(center: Tuple[float, float], avg_radius: float,
                      irregularity: float, spikiness: float,
@@ -187,14 +190,23 @@ def gen_camera():
     camera_object.data.angle = 0.200713
     camera_object.data.clip_start = 0.001
     
+    sphere = create_sphere(0.001)
+    lamp_object.location = (0, 0, 0.002)
+    set_color_red(sphere)
 
     lamp_object.parent = camera_object
+    sphere.parent = camera_object
     return camera_object, lamp_object
 
 def clamp_to_path(obj, path):
     obj.constraints.new(type='CLAMP_TO')
     obj.constraints["Clamp To"].target = path
     obj.constraints["Clamp To"].main_axis = "CLAMPTO_X"
+    bpy.context.view_layer.update()
+    
+def track_to_target(obj, target):
+    obj.constraints.new(type='TRACK_TO')
+    obj.constraints["Track To"].target = target
     bpy.context.view_layer.update()
 
 
@@ -364,8 +376,8 @@ def update_path_pos(obj, height):
     obj.data.dimensions = '2D'
     obj.location[2] = height
     
-def create_sphere():
-    bpy.ops.mesh.primitive_uv_sphere_add(enter_editmode=False, align='WORLD', location=(0, 0, 0), scale=(0.00001, 0.00001, 0.00001))
+def create_sphere(rad = 0.00001):
+    bpy.ops.mesh.primitive_uv_sphere_add(enter_editmode=False, align='WORLD', location=(0, 0, 0), scale=(rad, rad, rad))
     return bpy.context.object
 
 def create_data_file(file_location, file_name):
@@ -381,22 +393,6 @@ def create_data_file(file_location, file_name):
     pixels = np.argwhere(pixels > acc_delta)
     for px in pixels:
         ret[px[1]].append(px[0])
-    #for i in range(len(pixels)):
-    #for i, pixel in enumerate(pixels):
-        #pixel = pixels[i]
-        #pixel = np.array(img.pixels[i * 4: i * 4 + 3])
-        #pixel = (img.pixels[i * 4], img.pixels[i * 4 + 1], img.pixels[i * 4+ 2])
-        # mean = np.sum(pixel) / 3
-        #if np.max(pixel) > mean + acc_delta:
-        #    ret[np.argmax(pixel)].append(i)
-        # pixel = pixel - mean
-        #for k in range(3):
-        #    if pixel[k] > acc_delta:
-        #        ret[k].append(i)
-        #        break
-        #mean = np.mean(pixel)
-        #if np.max(pixel) > mean + acc_delta:
-        #    ret[np.argmax(pixel)].append(i)
     bpy.data.images.remove(img)
     for i in range(len(ret)):
         ret[i] = list(map(lambda x: (round(x % bpy.context.scene.render.resolution_x), bpy.context.scene.render.resolution_y - round(x / bpy.context.scene.render.resolution_x)), ret[i]))
@@ -487,15 +483,15 @@ def delete_all():
 def gen_scene(num_points, seed=0, exec_path="Y:/blender_prj"):
     random.seed(seed)
     
-    bpy.context.scene.render.resolution_x = 320
-    bpy.context.scene.render.resolution_y = 240
+    bpy.context.scene.render.resolution_x = 160
+    bpy.context.scene.render.resolution_y = 120
     bpy.context.scene.eevee.taa_render_samples = 32
     
     
     points = generate_polygon(center=(0, 0),
                                 avg_radius=0.08,
                                 irregularity=0.4,
-                                spikiness=0.1,
+                                spikiness=0.08,
                                 num_vertices=num_points)
                                 
                                 
@@ -556,10 +552,132 @@ def gen_scene(num_points, seed=0, exec_path="Y:/blender_prj"):
     
     init_mov_scene(camera, path, sphere_1, sphere_2, sphere_3, path_for_dot, 0.001, path=exec_path + '/' + str(seed))
 
+def get_numpy_image(file_location, file_name):
+    bpy.ops.image.open(filepath=file_location + '/' + file_name)
+    img = bpy.data.images[file_name]
+    pixels = np.array(img.pixels)
+    size = (round(len(pixels) / 4), 4)
+    pixels = pixels.reshape(size)[:, 0:3]
+    m = np.mean(pixels, 1)
+    m = m.reshape((bpy.context.scene.render.resolution_y, bpy.context.scene.render.resolution_x))
+    bpy.data.images.remove(img)
+    return m
+
+def test_run(camera, camera_global, light_global, exec_path):
+    body = {
+        'key': 'blender',
+    }
+    print('DELETE', requests.delete('http://127.0.0.1:8000/shape', data=json.dumps(body)))
+    for i in range(100000):
+        start = time.time()
+        update()
+        render_and_save_image(camera_global, "world_" + str(i) + ".png", exec_path)
+        update()
+        render_and_save_image(camera, "line_" + str(i) + ".png", exec_path)
+        image = get_numpy_image(exec_path, "line_" + str(i) + ".png")
+#        body = {
+#            'key': 'blender',
+#            'dot': [camera.location[0], camera.location[1]]
+#        }
+#        print('PUT', requests.put('http://127.0.0.1:8000/shape', data=json.dumps(body)))
+        body = {
+            'save_suffix': 'blender_' + str(i),
+            'image': image.tolist(),
+            'scale': [0.001522, 0.00202],
+            'key': 'blender',
+            'dot': [camera.location[0], camera.location[1]]
+        }
+        res = requests.post('http://127.0.0.1:8000/nn', data=json.dumps(body))
+        print('POST', res)
+        delta = res.json()['predicted']
+        if delta[0] + delta[1] == 0:
+            break
+        camera.location[0] += delta[0]
+        camera.location[1] += delta[1]
+        print(i, "iteration took: ", time.time()-start)
+        
+
+def gen_test_scene(num_points, seed=0, exec_path="Y:/blender_prj"):
+    random.seed(seed)
+    
+    bpy.context.scene.render.resolution_x = 160
+    bpy.context.scene.render.resolution_y = 120
+    bpy.context.scene.eevee.taa_render_samples = 32
+    
+    
+    points = generate_polygon(center=(0, 0),
+                                avg_radius=0.08,
+                                irregularity=0.4,
+                                spikiness=0.08,
+                                num_vertices=num_points)
+                                
+                                
+    path, _ = gen_path(points, type="POLY" if seed % 2 else 'NURBS')
+    
+    new_collection = bpy.data.collections.new('new_collection')
+    bpy.context.scene.collection.children.link(new_collection)
+    new_collection.objects.link(path)
+    
+    t_mesh = mesh_from_cruve(path)
+    
+    path_points = points_from_mesh(t_mesh)
+    
+    delete_object(t_mesh)
+    
+    path_for_dot, _ = gen_path(points, type="POLY" if seed % 2 else 'NURBS')
+    
+    shape, _, _, _ = generate_shape(path_points, height=0.003)
+    base, _, _, _ = gen_base(0.2)
+    camera, lamp = gen_camera();
+    
+    new_collection.objects.link(path_for_dot)
+    new_collection.objects.link(shape)
+    new_collection.objects.link(camera)
+    new_collection.objects.link(lamp)
+    new_collection.objects.link(base)
+
+    clamp_to_path(camera, path)
+    update_path_pos(path, 0.02)
+    update_path_pos(path_for_dot, 0.003)
+    
+    create_uv(shape)
+    create_uv(base)
+    
+    base_textures = [f for f in os.listdir(exec_path + '/base_texture')]
+    shape_textures = [f for f in os.listdir(exec_path + '/shape_texture')]
+    set_texture(shape, 80, img=exec_path + '/shape_texture/' + shape_textures[seed % len(shape_textures)])
+    set_texture(base, 160, img=exec_path + '/base_texture/' + base_textures[seed % len(base_textures)])
+    
+    
+    camera_init_pos = get_world_pos(camera)
+    camera.constraints.clear()
+    camera.location[0] = camera_init_pos[0]
+    camera.location[1] = camera_init_pos[1]
+    camera.location[2] = camera_init_pos[2]
+    
+    camera_global, lamp_global = gen_camera();
+
+    new_collection.objects.link(camera_global)
+    new_collection.objects.link(lamp_global)
+    
+    camera_global.data.angle = 0.12915
+    lamp_global.data.diffuse_factor = 0
+    
+    camera_global.location[0] = 0
+    camera_global.location[1] = 0
+    camera_global.location[2] = 2
+        
+    track_to_target(camera_global, shape)
+    
+    test_run(camera, camera_global, lamp_global, exec_path + '/test_run')
+    
+    
     
 
 #delete_all()
 #gen_scene(128, 0)
-for i in range(10, 20):
-    delete_all()
-    gen_scene(128, i, '/home/al-w/projects/diplom/blender')
+#for i in range(25):
+#    delete_all()
+#    gen_scene(256, i, 'Y:/cache/dipl/vision_for_chpu_diplom/blender')
+delete_all()
+gen_test_scene(128, 2, 'Y:/cache/dipl/vision_for_chpu_diplom/blender')
